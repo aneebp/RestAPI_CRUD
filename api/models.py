@@ -10,3 +10,11 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
     
+class Laibrary(models.Model):
+    book = models.CharField(max_length=100)
+    auther = models.CharField(max_length=100)
+    published_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-published_date"]
+    
